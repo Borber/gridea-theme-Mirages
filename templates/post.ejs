@@ -129,7 +129,7 @@
 </div>
 <div id="qr-box">
     <div class="post-qr-code-box">
-        <img src="https://api.wuzuhua.cn/qc/?text=<%= post.link %>" width="250" height="250" alt="本页链接的二维码"/>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=<%= post.link %>" width="250" height="250" alt="本页链接的二维码"/>
     </div>
     <div class="reward-qr-code-box">
 		<% if (site.customConfig.ds) { %>

@@ -47,7 +47,7 @@
     }, 
 	   {
       "name": "ds",
-      "label": "归档图片地址：",
+      "label": "打赏二维码图片：",
       "group": "背景",
       "value": "",
       "type": "input",
