@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html class="no-js" >
+<head>
+ <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+</head>
+<body class="theme-white color-default card  desktop windows chrome not-safari use-sidebar">
+    <script>
+        loadPrefersDarkModeState();
+        if (LocalConst.USE_MIRAGES_DARK || (LocalConst.AUTO_NIGHT_SHIFT && LocalConst.PREFERS_DARK_MODE)) {
+            var body = document.querySelector("body");
+            body.classList.remove('theme-white');
+            body.classList.add('theme-dark');
+        }
+    </script>
+<!--[if lt IE 9]>
+<div class="browse-happy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+<![endif]-->
+<div class="sp-progress"></div>
+<div id="wrap">
+    <span id="backtop" class="waves-effect waves-button"><i class="fa fa-angle-up"></i></span>
+  <%- include('./includes/header') %>
+    
+    <div id="body">
+        <style type="text/css">
+    /** 页面样式调整 */
+        @media(max-width: 767px) {
+        body.card #index, body.card #archive {
+            padding: 4rem 3rem 3.5rem;
+        }
+        body.card .container {
+            max-width: 710px;
+        }
+        body.card #index article, body.card #archive article {
+            padding: .9375rem 0 1.25rem;
+        }
+        body.card #index article .post-card-mask, body.card #archive article .post-card-mask {
+            height: 12.5rem;
+        }
+        body.card #index article .post-card-container, body.card #archive article .post-card-container {
+            padding: 1rem 1rem;
+        }
+        .page-navigator {
+            margin-top: 2rem;
+        }
+    }
+    @media(max-width: 336px) {
+        body.card #index article .post-card-mask, body.card #archive article .post-card-mask {
+            height: 10.5rem;
+        }
+        a.btn, .btn>a {
+            padding: .4375rem 2.25rem;
+        }
+        .page-navigator {
+            margin-top: 1.5rem;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1301px) {
+        body.card .container {
+            max-width: 720px;
+        }
+    }
+    @media screen and (min-width: 1302px) and (max-width: 1599px) {
+        body.card .container {
+            max-width: 864px;
+        }
+    }
+    @media screen and (min-width: 1600px) and (max-width: 1799px){
+        body.card .container {
+            max-width: 896px;
+        }
+    }
+    @media screen and (min-width: 1800px) and (max-width: 1999px){
+        body.card .container {
+            max-width: 960px;
+        }
+    }
+    @media screen and (min-width: 2000px) and (max-width: 2399px) {
+        body.card .container {
+            max-width: 992px;
+        }
+    }
+    @media screen and (min-width: 2400px) {
+        body.card .container {
+            max-width: 1024px;
+        }
+    }
+                    #qr-box {
+        background-color: transparent;
+    }
+            .post-buttons, #qr-box {
+        display: none;
+    }
+    #body-bottom {
+        margin-top: 0;
+    }
+            
+                .inner {
+        background-color: rgba(0,0,0,0.25);
+    }
+        #masthead {
+        min-height: 12.5rem;
+    }
+                </style>
+<style type="text/css">
+    </style>        <script type="text/javascript">
+            var wrap = document.querySelector('#wrap');
+            wrap.classList.remove('display-menu-tree');
+            var body = document.querySelector('body');
+            body.classList.remove('display-menu-tree');
+            LocalConst.TOC_AT_LEFT = false;
+            
+                        if (body.classList.contains('no-banner')) {
+                body.classList.remove('no-banner');
+            }                        if (body.classList.contains('content-lang-en')) {
+                body.classList.remove('content-lang-en');
+            }                        if (body.classList.contains('content-serif')) {
+                body.classList.remove('content-serif');
+            }            LocalConst.SHOW_TOC = false;
+                    </script>
+                                <header id="masthead" class="align-center align-middle " style="
+            height:
+        65;">
+            <div class="blog-background"></div>
+                        <div class="lazyload-container"></div>
+            <script type="text/javascript">
+            var blurBanner = false;                if (!blurBanner) registLoadBanner();
+            </script>
+				
+			<% if (site.customConfig.sy) { %>						
+            <img id="lazyload-img" alt="page banner image" src="<%= site.customConfig.sy %>?imageView2/2/w/64/q/75" style="display: none" onload="javascript:loadBanner(this, '<%= site.customConfig.sy %>', '', document.querySelector('#masthead'), '1', window.screen.availWidth, window.screen.availHeight, blurBanner)">
+			<% } %>	
+                        <script type="text/javascript">
+                var head = document.querySelector("#masthead");
+                var bgHeight = getBgHeight(window.innerHeight, '65', '40');
+                head.style.height = bgHeight + "px";
+                            </script>
+                        <div class="inner">
+                <div class="container">
+                    <h1 class="blog-title" style=""><%= tag.name %></h1>
+                    
+                </div>
+            </div>
+                    </header>
+                    <div class="container">
+            <div class="row">
+
+
+
+<div id="index" role="main">
+    	                                
+	
+	                                     <% posts.forEach(function(post) { %>
+	                                  <article class="post-item">
+                <div class="art-bg">
+					<% if (themeConfig.showFeatureImage && post.feature) { %>
+                  <div class="feature-container" style="background-image: url('<%= post.feature %>')"></div>
+					<% } %>													  
+                </div>
+              
+
+              <div class="post-con">
+            
+                <a href="<%= post.link %>">
+                  <h2 class="post-title"><%= post.title %></h2>
+                </a>
+                
+                <div class="post-info">
+                  <%= post.dateFormat %>
+					<% post.tags.forEach(function(tag) { %>
+                  <span>•</span>
+                  <%= tag.name %>
+				   <% }); %>
+                </div>
+              </div>
+            </article>
+			 <% }); %>
+                                   
+                                            
+                            <ol class="page-navigator">
+								
+								<% if (pagination.prev) { %>
+								<li class="btn btn-primary prev"><a href="<%= pagination.prev %>">上一页</a></li>
+								 <% } %>
+								<% if (pagination.next) { %>
+								<li class="btn btn-primary next"><a href="<%= pagination.next %>">下一页</a></li></ol></div> 
+									 <% } %>
+</div>
+</div>
+<div id="body-bottom">
+</div>
+    </div><!-- end #body -->
+</div><!-- end #wrap -->
+<%- include('./includes/footer') %>
+
+    <script src="<%= themeConfig.domain %>/media/scripts/jquery.min.js" type="text/javascript"></script>
+<script src="<%= themeConfig.domain %>/media/scripts/mirages.main.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="<%= themeConfig.domain %>/media/scripts/APlayer.min.js"></script>
+
+
+<script>
+
+</body>
+</html>
+

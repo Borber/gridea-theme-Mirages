@@ -1,0 +1,67 @@
+{
+  "name": "Mirages移植版",
+  "version": "1.0.0",
+  "author": "文中君",
+  "customConfig": [
+	  {
+      "name": "fa-github",
+      "label": "Github",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+	 {
+      "name": "fa-twitter",
+      "label": "Twitter",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+	 {
+      "name": "fa-qq",
+      "label": "QQ",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },  
+	  
+	   
+	  {
+      "name": "sy",
+      "label": "首页图片地址：",
+      "group": "背景",
+      "value": "",
+      "type": "input",
+      "note": "图片地址"
+    },  
+	  {
+      "name": "gd",
+      "label": "归档图片地址：",
+      "group": "背景",
+      "value": "",
+      "type": "input",
+      "note": "图片地址"
+    }, 
+	   {
+      "name": "ds",
+      "label": "归档图片地址：",
+      "group": "背景",
+      "value": "",
+      "type": "input",
+      "note": "图片地址"
+    }, 
+	  {
+      "name": "ga",
+      "label": "跟踪 ID",
+      "group": "谷歌统计",
+      "value": "",
+      "type": "input",
+      "note": "UA-xxxxxxxxx-x"
+    }
+	  
+	  
+	  ]
+}
